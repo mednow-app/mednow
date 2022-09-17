@@ -7,7 +7,7 @@ function LandingScreen({ navigation }) {
   return (
     <View style={containerStyles.container}>
       <ScrollView>
-        <View style={styles.screenContainer}>
+        <View style={containerStyles.screenContainer}>
           <View style={styles.headerContainer}>
             <Text style={styles.logo}>mednow</Text>
             <Text style={textStyles.heading}>Find first aid nearby.</Text>
@@ -35,7 +35,10 @@ function LandingScreen({ navigation }) {
               Sign Up As Patient
             </Button>
             <View style={styles.buttonSpacing} />
-            <Button type="tertiary" onPress={() => {}}>
+            <Button
+              type="tertiary"
+              onPress={() => navigation.navigate("MedicSignUp")}
+            >
               Sign Up As Medic
             </Button>
             <View style={styles.buttonSpacing} />
@@ -53,11 +56,6 @@ function LandingScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  screenContainer: {
-    marginHorizontal: 20,
-    marginTop: 40,
-    marginBottom: 48,
-  },
   headerContainer: {
     marginBottom: 24,
   },
