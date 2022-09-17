@@ -5,8 +5,16 @@ export const PropertyInput = ({title, placeholder, upload=false}) => {
     return (
         <>
             <Text style={styles.title}>{title}</Text>
+            
             <View style={{justifyContent: 'center'}}>
-                {upload ? <Text style={{position: 'absolute'}}>sd</Text> : <></>}
+                {upload ? 
+                <View style={{position: 'absolute', left: 16}}>
+                    <Image
+                        source={require("../assets/img/arrow.png")}
+                        style={{height: 30, width: 30}}
+                    />
+                </View> : 
+                <></>}
                 <TextInput 
                     style={upload ? styles.uploadInput : styles.input} 
                     editable={!(upload) ? true : false} 
@@ -38,7 +46,7 @@ const styles = StyleSheet.create({
     uploadInput: {
         height: 50,
         fontSize: 20,
-        paddingLeft: 69,
+        paddingLeft: 55,
         borderColor: COLORS.black,
         borderWidth: 1,
         borderRadius: 12,
