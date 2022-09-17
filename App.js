@@ -2,11 +2,15 @@ import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LandingScreen from "./screens/Landing";
-import EmergencyScreen from "./screens/Emergency";
-import PatientSignUpScreen from "./screens/Profile";
-import MedicSignUpScreen from "./screens/MedicSignUp";
-import ProfileScreen from "./screens/Profile";
-import NotificationScreen from "./screens/Notification";
+import EmergencyScreen from "./screens/patients/Emergency";
+import PatientSignUpScreen from "./screens/patients/PatientSignUp";
+import MedicSignUpScreen from "./screens/medics/MedicSignUp";
+import WhoCanBeAMedicScreen from "./screens/medics/WhoCanBeAMedic";
+import EmergencyNotificationScreen from "./screens/medics/notification/EmergencyNotification";
+import AcceptEmergencyScreen from "./screens/medics/notification/AcceptEmergency";
+import ProfileScreen from "./screens/profile/Profile";
+import UpdateMedicalInformationScreen from "./screens/profile/UpdateMedicalInformation";
+import FirstAidResourcesScreen from "./screens/profile/FirstAidResources";
 
 const Stack = createNativeStackNavigator();
 
@@ -29,9 +33,26 @@ export default function App() {
       >
         <Stack.Screen name="Landing" component={LandingScreen} />
         <Stack.Screen name="Emergency" component={EmergencyScreen} />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="PatientSignUp" component={PatientSignUpScreen} />
         <Stack.Screen name="MedicSignUp" component={MedicSignUpScreen} />
-        <Stack.Screen name="Notification" component={NotificationScreen} />
+        <Stack.Screen name="WhoCanBeAMedic" component={WhoCanBeAMedicScreen} />
+        <Stack.Screen
+          name="EmergencyNotification"
+          component={EmergencyNotificationScreen}
+        />
+        <Stack.Screen
+          name="AcceptEmergency"
+          component={AcceptEmergencyScreen}
+        />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen
+          name="FirstAidResources"
+          component={FirstAidResourcesScreen}
+        />
+        <Stack.Screen
+          name="UpdateMedicalInformation"
+          component={UpdateMedicalInformationScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

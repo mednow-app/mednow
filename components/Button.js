@@ -9,6 +9,7 @@ function Button({ type, onPress, children }) {
         styles.button,
         type === "primary" && styles.primaryButton,
         type === "secondary" && styles.secondaryButton,
+        type === "tertiary" && styles.tertiaryButton,
       ]}
     >
       <Text
@@ -37,6 +38,12 @@ const styles = StyleSheet.create({
   },
   secondaryButton: {
     backgroundColor: COLORS.beige,
+  },
+  tertiaryButton: {
+    backgroundColor: COLORS.grey,
+  },
+  quaternaryButton: {
+    backgroundColor: COLORS.white,
   },
   buttonText: {
     fontSize: 16,

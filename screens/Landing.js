@@ -38,6 +38,13 @@ function LandingScreen({ navigation }) {
             <Button type="tertiary" onPress={() => {}}>
               Sign Up As Medic
             </Button>
+            <View style={styles.buttonSpacing} />
+            <Button
+              type="quaternary"
+              onPress={() => navigation.navigate("WhoCanBeAMedic")}
+            >
+              Who Can Be A Medic
+            </Button>
           </View>
         </View>
       </ScrollView>

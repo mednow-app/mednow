@@ -1,7 +1,7 @@
 import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
-import Navbar from "../components/Navbar";
-import { containerStyles } from "../constants/styles";
-import { COLORS, FONTS } from "../constants/theme";
+import Navbar from "../../components/Navbar";
+import { containerStyles } from "../../constants/styles";
+import { COLORS, FONTS } from "../../constants/theme";
 
 function EmergencyScreen() {
   return (

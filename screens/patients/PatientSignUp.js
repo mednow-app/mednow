@@ -6,11 +6,11 @@ import {
   StyleSheet,
   ScrollView,
 } from "react-native";
-import { COLORS, FONTS } from "../constants/theme";
-import { PropertyInput } from "../components/PropertyInput";
-import Button from "../components/Button";
+import { COLORS, FONTS } from "../../constants/theme";
+import { PropertyInput } from "../../components/PropertyInput";
+import Button from "../../components/Button";
 
-function ProfileScreen() {
+function PatientSignUpScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.heading}>Hi, Patient</Text>
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProfileScreen;
+export default PatientSignUpScreen;
