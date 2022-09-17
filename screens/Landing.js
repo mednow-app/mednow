@@ -1,15 +1,16 @@
 import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 import Button from "../components/Button";
 import { COLORS, FONTS } from "../constants/theme";
+import { containerStyles, textStyles } from "../constants/styles";
 
-function LandingScreen() {
+function LandingScreen({ navigation }) {
   return (
-    <View style={styles.container}>
+    <View style={containerStyles.container}>
       <ScrollView>
         <View style={styles.screenContainer}>
           <View style={styles.headerContainer}>
             <Text style={styles.logo}>mednow</Text>
-            <Text style={styles.heading}>Find first aid nearby.</Text>
+            <Text style={textStyles.heading}>Find first aid nearby.</Text>
           </View>
           <View style={styles.graphicContainer}>
             <View style={styles.graphicBackground}>
@@ -20,7 +21,10 @@ function LandingScreen() {
             </View>
           </View>
           <View style={styles.buttonsContainer}>
-            <Button type="primary" onPress={() => {}}>
+            <Button
+              type="primary"
+              onPress={() => navigation.navigate("Emergency")}
+            >
               Emergency
             </Button>
             <View style={styles.buttonSpacing} />
@@ -39,11 +43,6 @@ function LandingScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: COLORS.white,
-    paddingTop: 40,
-  },
   screenContainer: {
     marginHorizontal: 20,
     marginTop: 40,
@@ -58,11 +57,7 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.bold,
     marginBottom: 12,
   },
-  heading: {
-    color: COLORS.black,
-    fontFamily: FONTS.bold,
-    fontSize: 44,
-  },
+
   graphicContainer: {
     flexDirection: "row",
     justifyContent: "flex-end",
