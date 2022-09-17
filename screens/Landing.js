@@ -28,7 +28,10 @@ function LandingScreen({ navigation }) {
               Emergency
             </Button>
             <View style={styles.buttonSpacing} />
-            <Button type="secondary" onPress={() => {}}>
+            <Button
+              type="secondary"
+              onPress={() => navigation.navigate("PatientSignUp")}
+            >
               Sign Up As Patient
             </Button>
             <View style={styles.buttonSpacing} />
