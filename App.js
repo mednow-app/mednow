@@ -2,6 +2,7 @@ import { useFonts } from "expo-font";
 import { NavigationContainer, StackActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LandingScreen from "./screens/Landing";
+import PatientScreen from "./screens/Patient";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,14 +15,15 @@ export default function App() {
 
   if (!fontsLoaded) return null;
 
-  return (
+  return ( 
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Landing"
+        initialRouteName="Patient"
         screenOptions={{
           headerShown: false,
         }}
       >
+        <Stack.Screen name="Patient" component={PatientScreen} />
         <Stack.Screen name="Landing" component={LandingScreen} />
       </Stack.Navigator>
     </NavigationContainer>
