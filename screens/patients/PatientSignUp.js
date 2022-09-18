@@ -1,62 +1,57 @@
-import {
-  SafeAreaView,
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  ScrollView,
-} from "react-native";
-import { COLORS, FONTS } from "../../constants/theme";
-import { PropertyInput } from "../../components/PropertyInput";
+import { View, Text, ScrollView } from "react-native";
+import { containerStyles, textStyles } from "../../constants/styles";
 import Button from "../../components/Button";
+import { PropertyInput } from "../../components/PropertyInput";
+import { useNavigation } from "@react-navigation/native";
+import BackButton from "../../components/BackButton";
 
 function PatientSignUpScreen() {
+  const navigation = useNavigation();
+
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.heading}>Hi, Patient</Text>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <PropertyInput title={"Legal Full Name"} placeholder={"Sarah Wilson"} />
+    <View style={containerStyles.container}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={containerStyles.screenContainer}
+      >
+        <BackButton />
+        <Text style={textStyles.heading}>Hi, Patient.</Text>
+        <View style={{ height: 24 }} />
         <PropertyInput
-          title={"Email"}
-          placeholder={"sarah.wilson@uwaterloo.ca"}
+          title="Legal Full Name"
+          placeholder="Enter your legal full name"
         />
-        <PropertyInput title={"Phone Number"} placeholder={"519-HTN-HTNW"} />
-        <PropertyInput title={"Medical History"} />
+        <View style={{ height: 24 }} />
+        <PropertyInput title="Email" placeholder="Enter your email" />
+        <View style={{ height: 24 }} />
         <PropertyInput
-          title={"Health Card"}
-          placeholder={"Upload"}
+          title="Phone Number"
+          placeholder="Enter your phone number"
+        />
+        <View style={{ height: 24 }} />
+        <PropertyInput
+          title="Medical History"
+          placeholder="Enter any medical history"
+        />
+        <View style={{ height: 24 }} />
+        <PropertyInput
+          title="Health Card"
+          placeholder="Upload your health card"
           upload={true}
         />
-        <PropertyInput title={"Emergency Contacts"} />
-      </ScrollView>
-      <View style={styles.buttonContainer}>
-        <Button type={"primary"}>
-          <Text style={styles.buttonText}>Sign Out</Text>
+        <View style={{ height: 24 }} />
+        <PropertyInput
+          title="Emergency Contacts"
+          placeholder="Enter your emergency contacts"
+        />
+        <View style={{ height: 48 }} />
+        <Button type="primary" onPress={() => navigation.navigate("Emergency")}>
+          Sign Up
         </Button>
-      </View>
-    </SafeAreaView>
+        <View style={{ height: 48 }} />
+      </ScrollView>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginHorizontal: 20,
-    backgroundColor: COLORS.white,
-  },
-  heading: {
-    color: COLORS.black,
-    fontWeight: FONTS.bold,
-    paddingTop: 45,
-    fontSize: 48,
-  },
-  buttonContainer: {
-    paddingVertical: 30,
-  },
-  buttonText: {
-    fontWeight: FONTS.medium,
-    fontSize: 18,
-  },
-});
 
 export default PatientSignUpScreen;

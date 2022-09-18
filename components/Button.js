@@ -7,6 +7,7 @@ function Button({ type, onPress, children }) {
       onPress={onPress}
       style={[
         styles.button,
+        type === "emergency" && styles.emergencyButton,
         type === "primary" && styles.primaryButton,
         type === "secondary" && styles.secondaryButton,
         type === "tertiary" && styles.tertiaryButton,
@@ -15,6 +16,7 @@ function Button({ type, onPress, children }) {
       <Text
         style={[
           styles.buttonText,
+          type === "emergency" && styles.emergencyText,
           type === "primary" && styles.primaryText,
           type === "secondary" && styles.secondaryText,
         ]}
@@ -33,6 +35,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 18,
   },
+  emergencyButton: {
+    backgroundColor: COLORS.red,
+  },
   primaryButton: {
     backgroundColor: COLORS.green,
   },
@@ -48,6 +53,10 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 16,
     fontFamily: FONTS.medium,
+    color: COLORS.black,
+  },
+  emergencyText: {
+    color: COLORS.white,
   },
   primaryText: {
     color: COLORS.white,

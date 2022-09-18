@@ -48,6 +48,13 @@ function LandingScreen({ navigation }) {
             >
               Who Can Be A Medic
             </Button>
+            <View style={styles.buttonSpacing} />
+            <Button
+              type="quaternary"
+              onPress={() => navigation.navigate("EmergencyNotification")}
+            >
+              Medic Notification
+            </Button>
           </View>
         </View>
       </ScrollView>
@@ -65,7 +72,6 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.bold,
     marginBottom: 12,
   },
-
   graphicContainer: {
     flexDirection: "row",
     justifyContent: "flex-end",
@@ -86,6 +92,9 @@ const styles = StyleSheet.create({
     marginRight: 50,
     width: 173,
     height: 261,
+  },
+  buttonsContainer: {
+    marginBottom: 48,
   },
   buttonSpacing: {
     height: 18,

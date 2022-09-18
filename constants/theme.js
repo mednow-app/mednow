@@ -4,6 +4,7 @@ export const COLORS = {
   beige: "#E2DCC8",
   white: "#F1F1F1",
   grey: "#DFDFDF",
+  red: "#EE4F4F",
 };
 
 export const FONTS = {

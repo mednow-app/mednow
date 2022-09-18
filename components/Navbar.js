@@ -9,15 +9,6 @@ function Navbar() {
     <View style={styles.navbar}>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate("Emergency")}
-      >
-        <Image
-          source={require("../assets/img/alert.png")}
-          style={styles.icon}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.button}
         onPress={() => navigation.navigate("Profile")}
       >
         <Image source={require("../assets/img/user.png")} style={styles.icon} />
@@ -29,7 +20,7 @@ function Navbar() {
 const styles = StyleSheet.create({
   navbar: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     position: "absolute",
     bottom: 36,
     width: "100%",
